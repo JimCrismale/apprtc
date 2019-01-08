@@ -142,6 +142,9 @@ var AppController = function(loadingParams) {
   }.bind(this));
 };
 
+
+// TODO: JVC - Call created here.
+
 AppController.prototype.createCall_ = function() {
   var privacyLinks = $(UI_CONSTANTS.privacyLinks);
   this.hide_(privacyLinks);
@@ -187,6 +190,8 @@ AppController.prototype.showRoomSelection_ = function() {
   this.show_(roomSelectionDiv);
   this.roomSelection_.onRoomSelected = function(roomName) {
     this.hide_(roomSelectionDiv);
+
+    // TODO: JVC - move out this logic
     this.createCall_();
     this.finishCallSetup_(roomName);
 

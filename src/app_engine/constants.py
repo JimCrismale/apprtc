@@ -20,32 +20,32 @@ LOOPBACK_CLIENT_ID = 'LOOPBACK_CLIENT_ID'
 
 # Turn/Stun server override. This allows AppRTC to connect to turn servers
 # directly rather than retrieving them from an ICE server provider.
-ICE_SERVER_OVERRIDE = None
+#ICE_SERVER_OVERRIDE = None
 # Enable by uncomment below and comment out above, then specify turn and stun
-# ICE_SERVER_OVERRIDE  = [
-#   {
-#     "urls": [
-#       "turn:hostname/IpToTurnServer:19305?transport=udp",
-#       "turn:hostname/IpToTurnServer:19305?transport=tcp"
-#     ],
-#     "username": "TurnServerUsername",
-#     "credential": "TurnServerCredentials"
-#   },
-#   {
-#     "urls": [
-#       "stun:hostname/IpToStunServer:19302"
-#     ]
-#   }
-# ]
+ICE_SERVER_OVERRIDE  = [
+   {
+    "urls": [
+       "turn:35.221.52.52:3478?transport=udp",
+       "turn:35.221.52.523478?transport=tcp"
+   ],
+     "username": "toorcom",
+     "credential": "Stephan2019"
+   },
+   {
+     "urls": [
+       "stun:35.221.52.52:3478"
+     ]
+   }
+]
 
 ICE_SERVER_BASE_URL = 'https://networktraversal.googleapis.com'
 ICE_SERVER_URL_TEMPLATE = '%s/v1alpha/iceconfig?key=%s'
 ICE_SERVER_API_KEY = os.environ.get('ICE_SERVER_API_KEY')
 
 # Dictionary keys in the collider instance info constant.
-WSS_INSTANCE_HOST_KEY = 'host_port_pair'
-WSS_INSTANCE_NAME_KEY = 'vm_name'
-WSS_INSTANCE_ZONE_KEY = 'zone'
+WSS_INSTANCE_HOST_KEY = '10.150.0.2:443'
+WSS_INSTANCE_NAME_KEY = 'collider1'
+WSS_INSTANCE_ZONE_KEY = 'us-east4-c'
 WSS_INSTANCES = [{
     WSS_INSTANCE_HOST_KEY: 'apprtc-ws.webrtc.org:443',
     WSS_INSTANCE_NAME_KEY: 'wsserver-std',
